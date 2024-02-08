@@ -4,13 +4,13 @@
     # Canonical URL: https://github.com/romainl/vim-rnb
 
     information = {
-        author:      "Alex Vear",
-        email:       "alex@vear.uk",
-        name:        "photon",
-        description: "An elegant, dark colour scheme with minimal syntax highlighting",
-        background:  "dark",
-        webpage:     "https://github.com/axvr/photon.vim",
-        licence:     "MIT (2019)"
+        author:      "Florian Martin",
+        email:       "florianfmmartin@gmail.com",
+        name:        "fauxthon",
+        description: "An elegant, light colour scheme with minimal syntax highlighting",
+        background:  "light",
+        webpage:     "https://github.com/florianfmmartin/fauxthon",
+        licence:     "MIT (2024)"
     }
 
     # Color palette:
@@ -30,29 +30,28 @@
     # properly set up terminal emulator.
 
     # Background
-    bg = ["#262626", 235, "black"]
+    bg = ["#eeeeee", 231, "white"]
 
     # Darker background shades
-    bgd_1 = ["#1c1c1c", 234, "black"]
-
-    # Lighter background shades
-    bgl_1 = ["#303030", 236, "darkgray"]
-    bgl_2 = ["#3a3a3a", 237, "darkgray"]
-    bgl_3 = ["#444444", 238, "darkgray"]
-    bgl_4 = ["#626262", 241, "darkgray"]
-    bgl_5 = ["#9e9e9e", 247, "gray"]
-    bgl_6 = ["#b2b2b2", 249, "white"]
+    bgd_1 = ["#e4e4e4", 255, "white"]
+    bgd_2 = ["#dfdfdf", 254, "white"]
+    bgd_3 = ["#dadada", 253, "grey"]
+    bgd_4 = ["#949494", 246, "gray"]
 
     # Foreground
-    fg = ["#c6c6c6", 251, "white"]
+    fg = ["#121212", 233, "black"]
+
+    # Lighter background shades
+    fgl_1 = ["#303030", 236, "black"]
+    fgl_2 = ["#4e4e4e", 239, "darkgrey"]
 
     # Accents
-    purple = ["#af87d7", 140, "darkmagenta"]
-    orange = ["#d75f5f", 167, "red"]
-    grey = ["#767676", 243, "darkgray"]
-    green = ["#87af87", 108, "darkgreen"]
-    red = ["#af5f87", 132, "darkred"]
-    yellow = ["#d7af5f", 179, "darkyellow"]
+    main_accent = ["#0f7ebc", 134, "darkmagenta"]
+    orange = ["#d75f5f", 203, "red"]
+    grey = ["#6c6c6c", 242, "darkgray"]
+    green = ["#008700", 28, "darkgreen"]
+    red = ["#af0000", 124, "darkred"]
+    yellow = ["#d75f00", 166, "darkyellow"]
 
     # Highlights:
     #
@@ -88,11 +87,11 @@
 
     highlights = [
         [ "Normal", bg, fg, "NONE" ],
-        [ "NonText", "bg", bgl_3, "NONE" ],
-        [ "Comment", "bg", bgl_4, "NONE" ],
-        [ "Conceal", "bg", bgl_4, "NONE" ],
+        [ "NonText", "bg", bgd_3, "NONE" ],
+        [ "Comment", "bg", bgd_4, "NONE" ],
+        [ "Conceal", "bg", grey, "NONE" ],
 
-        [ "Constant", "bg", purple, "NONE" ],
+        [ "Constant", "bg", main_accent, "NONE" ],
         [ "Character", "Constant" ],
         [ "Number", "Constant" ],
         [ "Float", "Number" ],
@@ -142,41 +141,41 @@
         [ "Todo", "NONE", orange, "bold" ],
         [ "Underlined", "NONE", fg, "underline" ],
 
-        [ "StatusLine", bgl_2, purple, "NONE" ],
-        [ "StatusLineNC", bgl_1, grey, "NONE" ],
+        [ "StatusLine", bgd_2, main_accent, "bold" ],
+        [ "StatusLineNC", bgd_1, grey, "NONE" ],
         [ "StatusLineTerm", "StatusLine" ],
         [ "StatusLineTermNC", "StatusLineNC" ],
-        [ "TabLine", "StatusLineNC" ],
-        [ "TabLineFill", "StatusLineNC" ],
-        [ "TabLineSel", "StatusLine" ],
-        [ "WildMenu", bgl_1, orange, "NONE" ],
-        [ "VertSplit", bgl_1, bgl_1, "NONE" ],
+        [ "TabLine", bgd_3, grey, "NONE"],
+        [ "TabLineFill", "TabLine" ],
+        [ "TabLineSel", bgd_1, main_accent, "bold" ],
+        [ "WildMenu", orange, bg, "NONE" ],
+        [ "VertSplit", bgd_1, bgd_1, "NONE" ],
 
         [ "Title", "NONE", fg, "bold" ],
 
-        [ "LineNr", "NONE", bgl_4, "NONE" ],
-        [ "CursorLineNr", bgl_1, purple, "NONE" ],
-        [ "Cursor", purple, fg, "NONE" ],
-        [ "CursorLine", bgl_1, "NONE", "NONE" ],
+        [ "LineNr", "NONE", bgd_4, "NONE" ],
+        [ "CursorLineNr", bgd_1, main_accent, "NONE" ],
+        [ "Cursor", main_accent, fg, "NONE" ],
+        [ "CursorLine", bgd_1, "NONE", "NONE" ],
         [ "CursorColumn", "CursorLine" ],
-        [ "ColorColumn", bgd_1, "NONE", "NONE" ],
+        [ "ColorColumn", "CursorColumn" ],
         [ "SignColumn", "NONE", grey, "NONE" ],
 
-        [ "Visual", bgl_2, "NONE", "NONE" ],
-        [ "VisualNOS", bgl_3, "NONE", "NONE" ],
+        [ "Visual", bgd_2, "NONE", "NONE" ],
+        [ "VisualNOS", bgd_3, "NONE", "NONE" ],
 
-        [ "Pmenu", bgl_2, "NONE", "NONE" ],
-        [ "PmenuSbar", bgl_1, "NONE", "NONE" ],
-        [ "PmenuSel", bgl_1, purple, "NONE" ],
+        [ "Pmenu", bgd_1, grey, "NONE" ],
+        [ "PmenuSbar", bgd_2, "NONE", "NONE" ],
+        [ "PmenuSel", bgd_2, main_accent, "bold" ],
         [ "PmenuThumb", orange, "NONE", "NONE" ],
 
-        [ "FoldColumn", "NONE", bgl_4, "NONE" ],
-        [ "Folded", bgd_1, grey, "NONE" ],
+        [ "Folded", bgd_3, grey, "NONE" ],
+        [ "FoldColumn", "NONE", yellow, "NONE" ],
 
         [ "SpecialKey", "NONE", grey, "NONE" ],
         [ "IncSearch", orange, bg, "NONE" ],
-        [ "Search", purple, bg, "NONE" ],
-        [ "Directory", "NONE", purple, "NONE" ],
+        [ "Search", main_accent, bg, "NONE" ],
+        [ "Directory", "NONE", main_accent, "NONE" ],
         [ "MatchParen", "NONE", orange, "bold" ],
 
         [ "SpellBad", "NONE", red, "underline" ],
@@ -184,16 +183,16 @@
         [ "SpellLocal", "NONE", yellow, "underline" ],
         [ "SpellRare", "SpellLocal" ],
 
-        [ "QuickFixLine", bgd_1, "NONE", "NONE" ],
+        [ "QuickFixLine", bgd_3, "NONE", "NONE" ],
 
-        [ "DiffAdd", bgl_1, green, "NONE" ],
-        [ "DiffChange", bgl_1, "NONE", "NONE" ],
-        [ "DiffDelete", bgl_1, red, "NONE" ],
-        [ "DiffText", bgl_1, yellow, "NONE" ],
+        [ "DiffAdd", bgd_1, green, "NONE" ],
+        [ "DiffChange", bgd_1, "NONE", "NONE" ],
+        [ "DiffDelete", bgd_1, red, "NONE" ],
+        [ "DiffText", bgd_1, yellow, "NONE" ],
         [ "diffAdded", "DiffAdd" ],
         [ "diffRemoved", "DiffDelete" ],
 
-        [ "helpHyperTextJump", "bg", purple, "NONE" ],
+        [ "helpHyperTextJump", "bg", main_accent, "NONE" ],
         [ "htmlTag", "htmlTagName" ],
         [ "htmlEndTag", "htmlTag" ],
         [ "gitcommitSummary", "Title" ]
@@ -204,24 +203,24 @@
     # contain exactly 16 items, the corresponding Vim variable won't be set.
     terminal_ansi_colors = [
         # Dark
-        bgl_2,        # black
-        ["#ac2c2c"],  # red
-        ["#4e9a06"],  # green
-        ["#c4a000"],  # yellow
-        ["#1880bc"],  # blue
-        ["#75507b"],  # magenta
-        ["#389aad"],  # cyan
-        bgl_5,        # white
-
-        # Bright
-        bgl_3,        # black
+        fgl_1,        # black
         red,          # red
         green,        # green
+        ["#a2734c"],  # yellow
+        ["#12488b"],  # blue
+        ["#a347ba"],  # magenta
+        ["#2aa1b3"],  # cyan
+        bgd_4,        # white
+
+        # Bright
+        fgl_2,        # black
+        orange,       # red
+        ["#33d17a"],  # green
         yellow,       # yellow
-        ["#369dd8"],  # blue
-        purple,       # magenta
-        ["#34e2e2"],  # cyan
-        bgl_6         # white
+        ["#2a7bde"],  # blue
+        main_accent,       # magenta
+        ["#33c7de"],  # cyan
+        bgd_2         # white
     ]
 
     # Many thanks to Barry Arthur (https://github.com/dahu) for the original idea.
